@@ -175,7 +175,8 @@ Plugin 'bling/vim-airline'
     "  
     "  let g:airline_symbols.linenr = '⭡'
 Bundle 'Valloric/YouCompleteMe'
-    let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
+    let g:ycm_global_ycm_extra_conf='~/.vim/ycm_extra_conf.py'
+	let g:ycm_server_python_interpreter='/usr/bin/python'
     let g:ycm_collect_identifiers_from_tag_files = 1
     let g:ycm_seed_identifiers_with_syntax = 1
     let g:ycm_confirm_extra_conf=0
