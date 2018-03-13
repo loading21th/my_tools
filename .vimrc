@@ -85,6 +85,10 @@ set helplang=cn
 set hlsearch
 set showmatch
 
+"设置缩进方式   za,zA
+set fdm=indent
+set foldlevelstart=99
+
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
@@ -208,3 +212,6 @@ Bundle 'ctrlpvim/ctrlp.vim'
     let g:ctrlp_by_filename = 1
 Bundle "scrooloose/syntastic" 
     let g:ctrlp_regexp = 1
+Bundle "Valloric/MatchTagAlways"
+"针对不同的文件采取不同的缩进方式  
+filetype indent on

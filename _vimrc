@@ -132,6 +132,7 @@ set showmatch
 set guifont=courier_new:h10
 "设置缩进方式   za,zA
 set fdm=indent
+set foldlevelstart=99
 set rtp+=$VIM\vimfiles\bundle\vundle\
 call vundle#rc('$VIM\vimfiles\bundle\')
 Bundle 'gmarik/vundle'
