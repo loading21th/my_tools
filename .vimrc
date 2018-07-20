@@ -215,3 +215,5 @@ Bundle "scrooloose/syntastic"
 Bundle "Valloric/MatchTagAlways"
 "针对不同的文件采取不同的缩进方式  
 filetype indent on
+"使用系统粘贴板
+set clipboard^=unnamed,unnamedplus
