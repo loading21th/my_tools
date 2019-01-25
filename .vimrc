@@ -1,6 +1,15 @@
 "********************************************************  
 "                   一般性配置                          *  
 "********************************************************  
+"文件里乱码问题
+"设置编码方式  
+set encoding=utf-8  
+   
+"自动判断编码时 依次尝试以下编码  
+set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1  
+
+"解决consle输出乱码
+language messages zh_CN.utf-8
    
 "关闭vim一致性原则  
 set nocompatible  
@@ -13,6 +22,8 @@ set ruler
   
 "添加下划线
 set cursorline
+"高亮当前列
+set cursorcolumn
  
 "在状态栏显示正在输入的命令  
 set showcmd  
@@ -217,3 +228,9 @@ Bundle "Valloric/MatchTagAlways"
 filetype indent on
 "使用系统粘贴板
 set clipboard^=unnamed,unnamedplus
+"ctags自动查找
+set tags=tags;
+
+set ff=unix
+hi CursorColumn cterm=bold ctermbg=2 ctermfg=5
+hi Search cterm=bold ctermfg=red ctermbg=3                  
