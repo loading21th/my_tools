@@ -1,0 +1,12 @@
+[submodule "_vim/plugged/MatchTagAlways"]
+	path = _vim/plugged/MatchTagAlways
+	url = https://git::@github.com/Valloric/MatchTagAlways.git
+[submodule "_vim/plugged/syntastic"]
+	path = _vim/plugged/syntastic
+	url = https://git::@github.com/scrooloose/syntastic.git
+[submodule "_vim/plugged/tagbar"]
+	path = _vim/plugged/tagbar
+	url = https://git::@github.com/majutsushi/tagbar.git
+[submodule "_vim/plugged/vim-airline"]
+	path = _vim/plugged/vim-airline
+	url = https://git::@github.com/bling/vim-airline.git
