@@ -7,6 +7,15 @@
 [submodule "_vim/plugged/tagbar"]
 	path = _vim/plugged/tagbar
 	url = https://git::@github.com/majutsushi/tagbar.git
+[submodule "_vim/plugged/LeaderF"]
+	path = _vim/plugged/LeaderF
+	url = https://git::@github.com/Yggdroot/LeaderF.git
+[submodule "_vim/plugged/nerdcommenter"]
+	path = _vim/plugged/nerdcommenter
+	url = https://git::@github.com/scrooloose/nerdcommenter.git
+[submodule "_vim/plugged/nerdtree"]
+	path = _vim/plugged/nerdtree
+	url = https://git::@github.com/scrooloose/nerdtree.git
 [submodule "_vim/plugged/vim-airline"]
 	path = _vim/plugged/vim-airline
-	url = https://git::@github.com/bling/vim-airline.git
+	url = https://github.com/bling/vim-airline

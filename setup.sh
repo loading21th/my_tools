@@ -1,6 +1,5 @@
 THISDIR=`pwd`
 
-
 # Backup
 BACKUPNAME="backup-`date +%y-%m-%d-%H:%M:%S`"
 mkdir $BACKUPNAME
@@ -29,5 +28,10 @@ ln -sf $THISDIR/_tmux.conf ~/.tmux.conf
 # Vim
 backup ~/.vim ~/.vimrc
 rm -r ~/.vim ~/.vimrc
+#下载vim插件的子模块
+git submodule init
+git submodule update
 ln -s $(pwd)/_vim ~/.vim
 ln -s $(pwd)/_vimrc ~/.vimrc
+
+
