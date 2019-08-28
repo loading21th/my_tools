@@ -10,12 +10,18 @@
 [submodule "_vim/plugged/LeaderF"]
 	path = _vim/plugged/LeaderF
 	url = https://git::@github.com/Yggdroot/LeaderF.git
-[submodule "_vim/plugged/nerdcommenter"]
-	path = _vim/plugged/nerdcommenter
-	url = https://git::@github.com/scrooloose/nerdcommenter.git
 [submodule "_vim/plugged/nerdtree"]
 	path = _vim/plugged/nerdtree
 	url = https://git::@github.com/scrooloose/nerdtree.git
 [submodule "_vim/plugged/vim-airline"]
 	path = _vim/plugged/vim-airline
 	url = https://github.com/bling/vim-airline
+[submodule "_vim/plugged/gutentags_plus"]
+	path = _vim/plugged/gutentags_plus
+	url = https://git::@github.com/skywind3000/gutentags_plus.git
+[submodule "_vim/plugged/vim-gutentags"]
+	path = _vim/plugged/vim-gutentags
+	url = https://git::@github.com/ludovicchabant/vim-gutentags.git
+[submodule "_vim/plugged/vim-preview"]
+	path = _vim/plugged/vim-preview
+	url = https://git::@github.com/skywind3000/vim-preview.git

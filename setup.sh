@@ -12,8 +12,8 @@ echo "Start to setup..."
 echo "Old config was in $BACKUPNAME"
 
 # Bash
-#backup ~/.bashrc
-#ln -sf $THISDIR/_bashrc ~/.bashrc
+backup ~/.bashrc
+ln -sf $THISDIR/_bashrc ~/.bashrc
 #ln -sf $THISDIR/_testbash.py ~/.testbash.py
 
 # Git
