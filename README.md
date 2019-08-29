@@ -5,6 +5,20 @@
 ```
     tmux自行安装 2.9 
     vim 8<支持python2/3>
+        ./configure --with-features=huge \
+                --enable-multibyte \
+                --enable-rubyinterp=yes \
+                --with-python-command=python2.7 \
+                --enable-pythoninterp=yes \
+                --with-python-config-dir=/usr/lib/python2.7/config \
+                --with-python3-command=python3.5 \
+                --enable-python3interp=yes \
+                --with-python3-config-dir=/usr/lib/python3.5/config \
+                --enable-perlinterp=yes \
+                --enable-luainterp=yes \
+                --enable-gui=gtk2 --enable-cscope \
+                --prefix=/usr/home/liyao5/mybin
+        注意vim的安装，需要正确填写lib和command位置，利用源文件下./src/auto/config.log排查问题，rm ./sr/auto/config.cache之后再重新 ./configure
     gtags安装6.6.2
 ```
 2. bash setup.sh 即可备份源文件，并产生所需配置的软链到此目录下

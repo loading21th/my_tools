@@ -11,6 +11,19 @@ function backup {
 echo "Start to setup..."
 echo "Old config was in $BACKUPNAME"
 
+#work dir
+if [ ! -e /data0/liyao5/ ]; then 
+   sudo mkdir -p /data0/liyao5
+fi
+
+if [ ! -e ~/work ]; then 
+    ln -sf /data0/liyao5 ~/work
+fi
+
+if [ ! -e ~/mybin ]; then 
+    mkdir ~/mybin
+fi
+
 # Bash
 backup ~/.bashrc
 ln -sf $THISDIR/_bashrc ~/.bashrc
