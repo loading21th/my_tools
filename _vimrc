@@ -20,7 +20,7 @@ endif
 
 "解决consle输出乱码
 language messages zh_CN.utf-8
-   
+
 "关闭vim一致性原则  
 set nocompatible  
    
@@ -172,8 +172,9 @@ Plug 'ludovicchabant/vim-gutentags'
     
     " 禁用 gutentags 自动加载 gtags 数据库的行为
     let g:gutentags_auto_add_gtags_cscope = 0
-    "let g:gutentags_plus_switch = 1
-    "let g:gutentags_define_advanced_commands = 1                    "打开调试日志，message查看错误
+    let g:gutentags_plus_switch = 1
+    "打开调试日志，GutentagsToggleTrace,message查看错误
+    let g:gutentags_define_advanced_commands = 1     
 Plug 'skywind3000/vim-preview'
     autocmd FileType qf nnoremap <silent><buffer> <CR> :PreviewQuickfix<cr> "Enter打开预览
     autocmd FileType qf nnoremap <silent><buffer> C :PreviewClose<cr>       "C    关闭预览
@@ -253,6 +254,25 @@ Plug 'scrooloose/syntastic'
     let g:ctrlp_regexp = 1
 Plug 'Valloric/MatchTagAlways'
 call plug#end()
+
+function! Zoom ()
+    " check if is the zoomed state (tabnumber > 1 && window == 1)
+    if tabpagenr('$') > 1 && tabpagewinnr(tabpagenr(), '$') == 1
+        let l:cur_winview = winsaveview()
+        let l:cur_bufname = bufname('')
+        tabclose
+
+        " restore the view
+        if l:cur_bufname == bufname('')
+            call winrestview(cur_winview)
+        endif
+    else
+        tab split
+    endif
+endfunction
+
+"通过<leader>z最大最小化当前分屏
+nmap <leader>z :call Zoom()<CR>
 
 
 set ff=unix

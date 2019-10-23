@@ -12,12 +12,12 @@ echo "Start to setup..."
 echo "Old config was in $BACKUPNAME"
 
 #work dir
-if [ ! -e /data0/liyao5/ ]; then 
-   sudo mkdir -p /data0/liyao5
+if [ ! -e /data1/liyao5/ ]; then 
+   sudo mkdir -p /data1/liyao5
 fi
 
 if [ ! -e ~/work ]; then 
-    ln -sf /data0/liyao5 ~/work
+    ln -sf /data1/liyao5 ~/work
 fi
 
 if [ ! -e ~/mybin ]; then 
@@ -35,12 +35,12 @@ ln -sf $THISDIR/_bashrc ~/.bashrc
 
 # tmux
 backup ~/.tmux.conf
-rm -r ~/.tmux.conf
+rm -rf ~/.tmux.conf
 ln -sf $THISDIR/_tmux.conf ~/.tmux.conf
 
 # Vim
 backup ~/.vim ~/.vimrc
-rm -r ~/.vim ~/.vimrc
+rm -rf ~/.vim ~/.vimrc
 #下载vim插件的子模块
 git submodule init
 git submodule update
