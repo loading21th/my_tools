@@ -10,5 +10,5 @@ fi
 
 # User specific aliases and functions
 
-export PATH="$HOME/mybin/vim8/bin:$HOME/mybin/global/bin:$HOME/mybin:$PATH"
+export PATH="$HOME/mybin/python2/bin:$HOME/mybin/vim8/bin:$HOME/mybin/global/bin:$HOME/mybin:$PATH"
 alias gp="grep -rin --color"
