@@ -172,9 +172,8 @@ Plug 'ludovicchabant/vim-gutentags'
     
     " 禁用 gutentags 自动加载 gtags 数据库的行为
     let g:gutentags_auto_add_gtags_cscope = 0
-    let g:gutentags_plus_switch = 1
-    "打开调试日志，GutentagsToggleTrace,message查看错误
-    let g:gutentags_define_advanced_commands = 1     
+    "let g:gutentags_plus_switch = 1
+    let g:gutentags_define_advanced_commands = 1    "打开调试日志，GutentagsToggleTrace,message查看错误
 Plug 'skywind3000/vim-preview'
     autocmd FileType qf nnoremap <silent><buffer> <CR> :PreviewQuickfix<cr> "Enter打开预览
     autocmd FileType qf nnoremap <silent><buffer> C :PreviewClose<cr>       "C    关闭预览
@@ -187,6 +186,8 @@ Plug 'skywind3000/gutentags_plus'
 "<leader>cc - 查看有哪些函数调用了该函数  
 "<leader>cf - 查找光标下的文件  
 "<leader>ci - 查找哪些文件 include 了本文件 
+":GscopeFind find s -- 
+":GscopeFind find a -- 
 Plug 'majutsushi/tagbar'
     let g:tagbar_ctags_bin = 'ctags'
     let g:tagbar_autofocus = 1
@@ -258,7 +259,6 @@ Plug 'derekwyatt/vim-fswitch'
     au! BufEnter *.h  let b:fswitchdst = 'cc,cpp,c'
     nnoremap <leader>s :FSHere<CR>
 
-call plug#end()
 
 function! Zoom ()
     " check if is the zoomed state (tabnumber > 1 && window == 1)
