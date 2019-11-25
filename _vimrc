@@ -258,6 +258,7 @@ Plug 'derekwyatt/vim-fswitch'
     au! BufEnter *.cc  let b:fswitchdst = 'h,hpp'
     au! BufEnter *.h  let b:fswitchdst = 'cc,cpp,c'
     nnoremap <leader>s :FSHere<CR>
+call plug#end()
 
 
 function! Zoom ()
