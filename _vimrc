@@ -173,7 +173,7 @@ Plug 'ludovicchabant/vim-gutentags'
     " 禁用 gutentags 自动加载 gtags 数据库的行为
     let g:gutentags_auto_add_gtags_cscope = 0
     "let g:gutentags_plus_switch = 1
-    let g:gutentags_define_advanced_commands = 1    "打开调试日志，GutentagsToggleTrace,message查看错误
+    "let g:gutentags_define_advanced_commands = 1    "打开调试日志，GutentagsToggleTrace,message查看错误
 Plug 'skywind3000/vim-preview'
     autocmd FileType qf nnoremap <silent><buffer> <CR> :PreviewQuickfix<cr> "Enter打开预览
     autocmd FileType qf nnoremap <silent><buffer> C :PreviewClose<cr>       "C    关闭预览
