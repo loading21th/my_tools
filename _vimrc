@@ -174,12 +174,12 @@ Plug 'ludovicchabant/vim-gutentags'
     let g:gutentags_auto_add_gtags_cscope = 0
     "let g:gutentags_plus_switch = 1
     let g:gutentags_define_advanced_commands = 1    "打开调试日志，GutentagsToggleTrace,message查看错误
-Plug 'skywind3000/vim-preview'
-    autocmd FileType qf nnoremap <silent><buffer> <CR> :PreviewQuickfix<cr> "Enter打开预览
-    autocmd FileType qf nnoremap <silent><buffer> C :PreviewClose<cr>       "C    关闭预览
-    "noremap <Leader>u :PreviewScroll -0.5<cr> " 往上滚动预览窗口
-    "noremap <leader>d :PreviewScroll +0.5<cr> "  往下滚动预览窗口
-    noremap <leader>c :cclose<CR>                                           "关闭搜索显示            
+"Plug 'skywind3000/vim-preview'
+"    autocmd FileType qf nnoremap <silent><buffer> <CR> :PreviewQuickfix<cr> "Enter打开预览
+"    autocmd FileType qf nnoremap <silent><buffer> C :PreviewClose<cr>       "C    关闭预览
+"    "noremap <Leader>u :PreviewScroll -0.5<cr> " 往上滚动预览窗口
+"    "noremap <leader>d :PreviewScroll +0.5<cr> "  往下滚动预览窗口
+"    noremap <leader>c :cclose<CR>                                           "关闭搜索显示            
 Plug 'skywind3000/gutentags_plus'
 "<leader>cg - 查看光标下符号的定义  
 "<leader>cs - 查看光标下符号的引用  
@@ -256,7 +256,7 @@ Plug 'scrooloose/syntastic'
 Plug 'Valloric/MatchTagAlways'
 Plug 'derekwyatt/vim-fswitch'
     au! BufEnter *.cc  let b:fswitchdst = 'h,hpp'
-    au! BufEnter *.h  let b:fswitchdst = 'cc,cpp,c'
+    au! BufEnter *.h  let b:fswitchdst = 'c,cc,cpp'
     nnoremap <leader>s :FSHere<CR>
 call plug#end()
 
