@@ -120,6 +120,7 @@ nnoremap & *#
 set tags=./tags;,tags
 
 " cscope -Rbq
+set nocsverb
 if has ("cscope")
 	" add any cscope database in current directory
     if filereadable("cscope.out")
