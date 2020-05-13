@@ -16,15 +16,6 @@
 [submodule "_vim/plugged/vim-airline"]
 	path = _vim/plugged/vim-airline
 	url = https://github.com/bling/vim-airline
-[submodule "_vim/plugged/gutentags_plus"]
-	path = _vim/plugged/gutentags_plus
-	url = https://git::@github.com/skywind3000/gutentags_plus.git
-[submodule "_vim/plugged/vim-gutentags"]
-	path = _vim/plugged/vim-gutentags
-	url = https://git::@github.com/ludovicchabant/vim-gutentags.git
-[submodule "_vim/plugged/vim-preview"]
-	path = _vim/plugged/vim-preview
-	url = https://git::@github.com/skywind3000/vim-preview.git
 [submodule "_vim/plugged/vim-fswitch"]
 	path = _vim/plugged/vim-fswitch
 	url = https://git::@github.com/derekwyatt/vim-fswitch.git

@@ -24,5 +24,5 @@ export HISTTIMEFORMAT="[%F %T] "
 
 PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 
-export PATH="$HOME/mybin/python2/bin:$HOME/mybin/vim8/bin:$HOME/mybin/global/bin:$HOME/mybin:$PATH"
+export PATH="$HOME/mybin/*/bin:$PATH"
 alias gp="grep -rin --color"

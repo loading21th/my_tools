@@ -67,7 +67,7 @@ set ignorecase
 set backspace=indent,eol,start  
    
 "设置在vim中可以使用鼠标  
-set mouse=a  
+"set mouse=a  
    
 "设置tab宽度  
 set tabstop=4  
@@ -119,74 +119,33 @@ nnoremap & *#
 "优先搜索编辑文件所在目录的tags文件，之后向上搜索，在之后搜索当前命令所在路径的tags文件
 set tags=./tags;,tags
 
-" Using cscope easily
-"if has ("cscope")
-"	set cscopetag
-"	set csto=0
-"	set csverb
-"	set cscopequickfix=
-"	nmap cs :cs find s <C-R>=expand("<cword>")<CR><CR>
-"	nmap cg :cs find g <C-R>=expand("<cword>")<CR><CR>
-"	nmap cc :cs find c <C-R>=expand("<cword>")<CR><CR>
-"	nmap ct :cs find t <C-R>=expand("<cword>")<CR><CR>
-"	nmap ce :cs find e <C-R>=expand("<cword>")<CR><CR>
-"	nmap cf :cs find f <C-R>=expand("<cfile>")<CR><CR>
-"	nmap ci :cs find i <C-R>=expand("<cfile>")<CR><CR>
-"	nmap cd :cs find d <C-R>=expand("<cword>")<CR><CR>
-"endif
+" cscope -Rbq
+if has ("cscope")
+	" add any cscope database in current directory
+    if filereadable("cscope.out")
+        cs add cscope.out
+    " else add the database pointed to by environment variable
+    elseif $CSCOPE_DB != ""
+        cs add $CSCOPE_DB
+    endif
+	set cscopetag
+	set csto=0
+	set csverb
+	"set cscopequickfix=
+    set cscopequickfix=s-,c-,d-,i-,t-,e-
+    "查符号引用
+	nmap cs :tab cs find s <C-R>=expand("<cword>")<CR><CR> :copen<CR> 
+    "查定义
+	nmap cg :tab cs find g <C-R>=expand("<cword>")<CR><CR>  
+    "查被调用
+	nmap cc :tab cs find c <C-R>=expand("<cword>")<CR><CR> :copen<CR>
+endif
 
     "设置切换Buffer快捷键"
      nnoremap <F12> :bn<CR>   " tab 后移
      nnoremap <F10> :bp<CR>   " tab 前移
 
 call plug#begin('$HOME/.vim/plugged')
-Plug 'ludovicchabant/vim-gutentags'
-    "使用gtags
-    let $GTAGSLABEL='native-pygments'
-    "let $GTAGSLABEL='native'
-    let $GTAGSCONF='/usr/home/liyao5/my_tools/gtags.conf'           "使用绝对路径
-    " gutentags 搜索工程目录的标志，当前文件路径向上递归直到碰到这些文件/目录名
-    let g:gutentags_project_root = ['.root', '.svn', '.git', '.hg', '.project']
-    " 所生成的数据文件的名称
-    let g:gutentags_ctags_tagfile = '.tags'
-
-    " 同时开启 ctags 和 gtags 支持：
-    let g:gutentags_modules = []
-    if executable('ctags')
-    	let g:gutentags_modules += ['ctags']
-    endif
-    if executable('gtags-cscope') && executable('gtags')
-    	let g:gutentags_modules += ['gtags_cscope']
-    endif
-
-    " 将自动生成的 ctags/gtags 文件全部放入 ~/.cache/tags 目录中，避免污染工程目录
-    let g:gutentags_cache_dir = expand('~/.cache/tags')
-    
-    " 配置 ctags 的参数
-    let g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extra=+q']
-    let g:gutentags_ctags_extra_args += ['--c++-kinds=+px']
-    let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
-    
-    " 如果使用 universal ctags 需要增加下面一行
-    "let g:gutentags_ctags_extra_args += ['--output-format=e-ctags']
-    
-    " 禁用 gutentags 自动加载 gtags 数据库的行为
-    let g:gutentags_auto_add_gtags_cscope = 0
-    "let g:gutentags_plus_switch = 1
-    "let g:gutentags_define_advanced_commands = 1    "打开调试日志，GutentagsToggleTrace,message查看错误
-"Plug 'skywind3000/vim-preview'
-"    autocmd FileType qf nnoremap <silent><buffer> <CR> :PreviewQuickfix<cr> "Enter打开预览
-"    autocmd FileType qf nnoremap <silent><buffer> C :PreviewClose<cr>       "C    关闭预览
-"    "noremap <Leader>u :PreviewScroll -0.5<cr> " 往上滚动预览窗口
-"    "noremap <leader>d :PreviewScroll +0.5<cr> "  往下滚动预览窗口
-"    noremap <leader>c :cclose<CR>                                           "关闭搜索显示            
-Plug 'skywind3000/gutentags_plus'
-"<leader>cg - 查看光标下符号的定义  
-"<leader>cs - 查看光标下符号的引用  
-"<leader>cc - 查看有哪些函数调用了该函数  
-"<leader>cf - 查找光标下的文件  
-"<leader>ci - 查找哪些文件 include 了本文件 
-":GscopeFind find s -- 
 ":GscopeFind find a -- 
 Plug 'majutsushi/tagbar'
     let g:tagbar_ctags_bin = 'ctags'
@@ -285,3 +244,19 @@ set ff=unix
 "hi CursorColumn cterm=bold ctermbg=2
 hi CursorColumn cterm=bold ctermbg=4
 hi Search cterm=bold ctermfg=red ctermbg=3                  
+
+"自动调整quickfix大小
+au FileType qf call AdjustWindowHeight(3, 10)
+   function! AdjustWindowHeight(minheight, maxheight)
+       let l = 1
+       let n_lines = 0
+       let w_width = winwidth(0)
+       while l <= line('$')
+           " number to float for division
+           let l_len = strlen(getline(l)) + 0.0
+           let line_width = l_len/w_width
+           let n_lines += float2nr(ceil(line_width))
+           let l += 1
+       endw
+       exe max([min([n_lines, a:maxheight]), a:minheight]) . "wincmd _"
+   endfunction
