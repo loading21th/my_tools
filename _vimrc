@@ -131,22 +131,27 @@ if has ("cscope")
 	set cscopetag
 	set csto=0
 	set csverb
-	"set cscopequickfix=
-    set cscopequickfix=s-,c-,d-,i-,t-,e-
+	set cscopequickfix=
+    "set cscopequickfix=s-,c-,d-,i-,t-,e-
     "查符号引用
-	nmap cs :tab cs find s <C-R>=expand("<cword>")<CR><CR> :copen<CR> 
+	nmap cs :cs find s <C-R>=expand("<cword>")<CR><CR> 
     "查定义
-	nmap cg :tab cs find g <C-R>=expand("<cword>")<CR><CR>  
+	nmap cg :cs find g <C-R>=expand("<cword>")<CR><CR>
     "查被调用
-	nmap cc :tab cs find c <C-R>=expand("<cword>")<CR><CR> :copen<CR>
+	nmap cc :cs find c <C-R>=expand("<cword>")<CR><CR>
 endif
 
     "设置切换Buffer快捷键"
-     nnoremap <F12> :bn<CR>   " tab 后移
-     nnoremap <F10> :bp<CR>   " tab 前移
+     "nnoremap <F9> :tabn<CR>   " tab 后移
+     "nnoremap <F8> :tabp<CR>   " tab 前移
+     nnoremap <F12> :bn<CR>   " buffer 后移
+     nnoremap <F10> :bp<CR>   " buffer 前移
+     "nnoremap <leader>q :cprev<CR>   " quickfix 前移
+     "nnoremap <leader>w :cnext<CR>   " quickdix 后移
+     "autocmd FileType qf nnoremap <buffer> <Enter> <C-W><Enter><C-W>T
+     "set switchbuf+=newtab
 
 call plug#begin('$HOME/.vim/plugged')
-":GscopeFind find a -- 
 Plug 'majutsushi/tagbar'
     let g:tagbar_ctags_bin = 'ctags'
     let g:tagbar_autofocus = 1
