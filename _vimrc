@@ -226,6 +226,7 @@ Plug 'derekwyatt/vim-fswitch'
 call plug#end()
 
 
+"通过<leader>z最大最小化当前分屏
 function! Zoom ()
     " check if is the zoomed state (tabnumber > 1 && window == 1)
     if tabpagenr('$') > 1 && tabpagewinnr(tabpagenr(), '$') == 1
@@ -242,9 +243,16 @@ function! Zoom ()
     endif
 endfunction
 
-"通过<leader>z最大最小化当前分屏
 nmap <leader>z :call Zoom()<CR>
 
+" 自动分析加载cscope
+func! ReConnectCscope()
+    exec "cs kill 0 || echo 'no cscope db and now auto add it'"
+    exec "! $HOME/.vim/cscope_db.sh"
+    exec "set csprg=cscope"
+    exec "cs add cscope.out"
+endfunc
+map <F4> : call ReConnectCscope()<cr><cr><cr>
 
 set ff=unix
 "hi CursorColumn cterm=bold ctermbg=2
