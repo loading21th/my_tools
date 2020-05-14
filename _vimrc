@@ -132,14 +132,14 @@ if has ("cscope")
 	set cscopetag
 	set csto=0
 	set csverb
-	set cscopequickfix=
-    "set cscopequickfix=s-,c-,d-,i-,t-,e-
+	"set cscopequickfix=
+    set cscopequickfix=s-,c-,d-,i-,t-,e-
     "查符号引用
-	nmap cs :cs find s <C-R>=expand("<cword>")<CR><CR> 
+	nmap cs :cs find s <C-R>=expand("<cword>")<CR>:copen<cr> 
     "查定义
 	nmap cg :cs find g <C-R>=expand("<cword>")<CR><CR>
     "查被调用
-	nmap cc :cs find c <C-R>=expand("<cword>")<CR><CR>
+	nmap cc :cs find c <C-R>=expand("<cword>")<CR>:copen<CR>
 endif
 
     "设置切换Buffer快捷键"
