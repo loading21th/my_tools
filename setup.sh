@@ -12,12 +12,12 @@ echo "Start to setup..."
 echo "Old config was in $BACKUPNAME"
 
 #work dir
-if [ ! -e /data1/liyao5/ ]; then 
-   sudo mkdir -p /data1/liyao5
+if [ ! -e /data/lleoli/ ]; then 
+   sudo mkdir -p /data/lleoli
 fi
 
 if [ ! -e ~/work ]; then 
-    ln -sf /data1/liyao5 ~/work
+    ln -sf /data/lleoli ~/work
 fi
 
 if [ ! -e ~/mybin ]; then 

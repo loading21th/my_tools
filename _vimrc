@@ -209,14 +209,14 @@ Plug 'bling/vim-airline'
   let g:airline_symbols.notexists = '?'
   let g:airline_symbols.whitespace = 'Ξ'
 
-Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
-     "map <leader>f Leaderf file<CR>默认
-     "map <leader>b Leaderf buffer<CR>默认
-     "normal模式---i---查找模式---Tab---normal模式
-     nnoremap <leader>t :Leaderf tag<CR>
-     nnoremap <leader>u :Leaderf! function<CR>
-     let g:Lf_RootMarkers = ['.git', '.svn']
-     let g:Lf_WorkingDirectoryMode = 'ac'
+"Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
+"     "map <leader>f Leaderf file<CR>默认
+"     "map <leader>b Leaderf buffer<CR>默认
+"     "normal模式---i---查找模式---Tab---normal模式
+"     nnoremap <leader>t :Leaderf tag<CR>
+"     nnoremap <leader>u :Leaderf! function<CR>
+"     let g:Lf_RootMarkers = ['.git', '.svn']
+"     let g:Lf_WorkingDirectoryMode = 'ac'
 
 Plug 'scrooloose/syntastic'
     let g:ctrlp_regexp = 1
