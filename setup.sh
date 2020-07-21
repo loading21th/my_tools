@@ -20,10 +20,6 @@ if [ ! -e ~/work ]; then
     ln -sf /data/lleoli ~/work
 fi
 
-if [ ! -e ~/mybin ]; then 
-    mkdir ~/mybin
-fi
-
 # Bash
 backup ~/.bashrc
 ln -sf $THISDIR/_bashrc ~/.bashrc
