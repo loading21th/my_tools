@@ -30,10 +30,6 @@ set number
 "设置在编辑过程中右下角显示光标的行列信息  
 set ruler  
   
-"添加下划线
-set cursorline
-"高亮当前列
-set cursorcolumn
  
 "在状态栏显示正在输入的命令  
 set showcmd  
@@ -257,9 +253,6 @@ endfunc
 map <F4> : call ReConnectCscope()<cr><cr><cr>
 
 set ff=unix
-"hi CursorColumn cterm=bold ctermbg=2
-hi CursorColumn cterm=bold ctermbg=4
-hi Search cterm=bold ctermfg=red ctermbg=3                  
 
 "自动调整quickfix大小
 au FileType qf call AdjustWindowHeight(3, 10)
@@ -274,5 +267,17 @@ au FileType qf call AdjustWindowHeight(3, 10)
            let n_lines += float2nr(ceil(line_width))
            let l += 1
        endw
+
        exe max([min([n_lines, a:maxheight]), a:minheight]) . "wincmd _"
    endfunction
+
+"添加下划线
+set cursorline
+hi CursorLine term=bold cterm=bold ctermbg=4
+
+"高亮当前列
+set cursorcolumn
+hi Search cterm=bold ctermfg=red ctermbg=3                  
+
+hi CursorColumn cterm=bold ctermbg=4
+
