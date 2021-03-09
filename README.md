@@ -43,6 +43,10 @@
     :PlugStatus 查看状态
 ```
 4. 在各模块中，git remote -v 查看git url ，参考1，2步骤添加入子模块.添加过程中部分submodule出现`untracked content`需进入该模块，`git status`查看未跟踪内容，删除即可。
-
+5. 
+```
+alias gp="grep -rin --color"
+alias gvdiff="git difftool --extcmd vimdiff"
+```
 
 
