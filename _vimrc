@@ -29,7 +29,9 @@ set number
    
 "设置在编辑过程中右下角显示光标的行列信息  
 set ruler  
-  
+
+"设置不换行
+set nowrap  
  
 "在状态栏显示正在输入的命令  
 set showcmd  
